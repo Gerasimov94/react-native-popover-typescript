@@ -12,6 +12,7 @@ interface IPopoverItemProps {
 	textStyle?: object;
 	icon?: ReactNode;
 	underlayColor?: string;
+	hasIconsAtOptions: boolean;
 }
 
 const PopoverItem: React.FC<IPopoverItemProps> = ({
@@ -23,6 +24,7 @@ const PopoverItem: React.FC<IPopoverItemProps> = ({
 	icon,
 	textStyle,
 	underlayColor,
+	hasIconsAtOptions,
 	...props
 }) => (
 	<TouchableHighlight
@@ -32,7 +34,7 @@ const PopoverItem: React.FC<IPopoverItemProps> = ({
 		underlayColor={underlayColor}
 	>
 		<View style={[styles.container, style]}>
-			<View style={styles.iconStyle}>{icon}</View>
+			{hasIconsAtOptions? <View style={styles.iconStyle}>{icon}</View> : null}
 			<Text
 				ellipsizeMode={Platform.OS === 'ios' ? 'clip' : 'tail'}
 				numberOfLines={1}

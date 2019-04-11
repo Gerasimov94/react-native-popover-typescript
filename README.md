@@ -14,24 +14,24 @@ yarn add react-native-popover-typescript
 import React from 'react';
 
 import {View, Text, Image} from 'react-native';
-import Popover, {PopoverItem, PopoverDivider} from 'react-native-popover-typescript';
+import Popover from 'react-native-popover-typescript';
 
 class App extends React.PureComponent {
 	options: [{
-		title: 'Add room',
+		title: 'Option 1',
 		id: 0,
 		icon: <Image
-          style={{width: 18, height: 18}}
-          source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-        />,
+			style={{width: 18, height: 18}}
+			source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+		/>,
 		isStripped: false,
-		onSelect: (value: IOption) => console.log(value.title),
+		onSelect: (value: {title: string}) => console.log(value.title),
 	}, {
-		title: 'Add room 1',
+		title: 'Option 2',
 		id: 1,
 		icon: null,
 		isStripped: false,
-		onSelect: (value: IOption) => console.log(value.title),
+		onSelect: (value: {title: string}) => console.log(value.title),
 	}],
 
 	onHidden = () => console.log('i\'m hidden now!');

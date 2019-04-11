@@ -13,6 +13,7 @@ interface IPopoverItem {
 	};
 	hideMenu: () => void;
 	showMenu: () => void;
+	hasIconsAtOptions: boolean;
 }
 
 export default class PopoverItemWrapper extends PureComponent<IPopoverItem> {
@@ -26,12 +27,13 @@ export default class PopoverItemWrapper extends PureComponent<IPopoverItem> {
 	}
 
 	public render() {
-		const {item: {icon, title, isDisabled, isStripped}} = this.props;
+		const {item: {icon, title, isDisabled, isStripped}, hasIconsAtOptions} = this.props;
 
 		return (
 			<React.Fragment>
 				<PopoverItem
 					onPress={this.onSelect}
+					hasIconsAtOptions={hasIconsAtOptions}
 					disabled={isDisabled}
 					icon={icon}
 				>

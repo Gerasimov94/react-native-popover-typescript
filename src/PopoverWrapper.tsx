@@ -27,7 +27,7 @@ export default class PopoverWrapper extends Component<IPopoverWrapperProps> {
 
 	public render() {
 		const {options, style, children, onHidden} = this.props;
-		console.log(this.popover)
+		const hasIconsAtOptions = options.some(item => !!item.icon)
 
 		return (
 			<View style={style}>
@@ -46,6 +46,7 @@ export default class PopoverWrapper extends Component<IPopoverWrapperProps> {
 							item={item}
 							hideMenu={this.hideMenu}
 							showMenu={this.showMenu}
+							hasIconsAtOptions={hasIconsAtOptions}
 						/>
 					))}
 				</Popover>
