@@ -28,11 +28,12 @@ interface IPopoverState {
 interface IPopoverProps {
 	children: ReactNode | ReactNode[] | ReactText,
 	button: ReactNode | ReactNode[] | ReactText,
-	style: object;
+	style?: object;
 	onHidden: Function;
+	testID?: string,
 }
 
-class Popover extends Component<any, IPopoverState> {
+class Popover extends Component<IPopoverProps, IPopoverState> {
 	public container = React.createRef<View>();
 
 	public state = {

@@ -19,19 +19,20 @@ export default class PopoverWrapper extends Component<IPopoverWrapperProps> {
 		options: [],
 	};
 
-	public menu = React.createRef<Popover>();
+	public popover = React.createRef<Popover>();
 
-	private readonly showMenu = () => this.menu.current!.show();
+	private readonly showMenu = () => this.popover.current!.show();
 
-	private readonly hideMenu = () => this.menu.current!.hide();
+	private readonly hideMenu = () => this.popover.current!.hide();
 
 	public render() {
 		const {options, style, children, onHidden} = this.props;
+		console.log(this.popover)
 
 		return (
 			<View style={style}>
 				<Popover
-					ref={this.menu}
+					ref={this.popover}
 					button={
 						<TouchableOpacity onPress={this.showMenu}>
 							{children}

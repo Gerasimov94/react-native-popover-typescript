@@ -1,6 +1,6 @@
 {
   "name": "react-native-popover-typescript",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "description": "Implementing a popover based on the react-native-material-menu package",
@@ -23,7 +23,7 @@
     "url": "https://github.com/Gerasimov94/react-native-popover-typescript/issues"
   },
   "homepage": "https://github.com/Gerasimov94/react-native-popover-typescript#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "16.8.6",
     "react-native": "0.59.4"
   },
