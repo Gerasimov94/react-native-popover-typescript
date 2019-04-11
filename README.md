@@ -1,3 +1,7 @@
+## React Native Popover (typescript)
+
+[![npm version](https://badge.fury.io/js/react-native-popover-typescript.svg)](https://badge.fury.io/js/react-native-popover-typescript)
+
 ## Install
 
 ```bash
@@ -12,7 +16,6 @@ yarn add react-native-popover-typescript
 
 ```tsx
 import React from 'react';
-
 import {View, Text, Image} from 'react-native';
 import Popover from 'react-native-popover-typescript';
 
@@ -55,7 +58,7 @@ export default App;
 
 | name     | description                              |     type | default |
 | :------- | :----------------------------------------| -------: | :------ |
-| options  | Components which you wrapping (required) |     Node | -       |
+| options  | Components which you wrapping (required) |     Node | []      |
 | children | Button component (required)              |     Node | -       |
 | style    | Popover style                            |    Style | -       |
 | onHidden | Callback when popover has become hidden  | Function | -       |
