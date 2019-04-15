@@ -20,6 +20,11 @@ import {View, Text, Image} from 'react-native';
 import Popover from 'react-native-popover-typescript';
 
 class App extends React.PureComponent {
+
+	private readonly onHidden = () => console.log('i\'m hidden now!');
+
+	private readonly onSelect = (value: {title: string}) => console.log(value.title)
+
 	options: [{
 		title: 'Option 1',
 		id: 0,
@@ -28,16 +33,16 @@ class App extends React.PureComponent {
 			source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
 		/>,
 		isStripped: false,
-		onSelect: (value: {title: string}) => console.log(value.title),
+		onSelect: this.onSelect,
 	}, {
 		title: 'Option 2',
 		id: 1,
 		icon: null,
 		isStripped: false,
-		onSelect: (value: {title: string}) => console.log(value.title),
+		onSelect: this.onSelect,
 	}],
 
-	onHidden = () => console.log('i\'m hidden now!');
+	
 
 	render() {
 		<Popover
