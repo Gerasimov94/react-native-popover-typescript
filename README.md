@@ -21,37 +21,35 @@ import Popover from 'react-native-popover-typescript';
 
 class App extends React.PureComponent {
 
-	private readonly onHidden = () => console.log('i\'m hidden now!');
+  private readonly onHidden = () => console.log('i\'m hidden now!');
 
-	private readonly onSelect = (value: {title: string}) => console.log(value.title)
+  private readonly onSelect = (value: {title: string}) => console.log(value.title)
 
-	options: [{
-		title: 'Option 1',
-		id: 0,
-		icon: <Image
-			style={{width: 18, height: 18}}
-			source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
-		/>,
-		isStripped: false,
-		onSelect: this.onSelect,
-	}, {
-		title: 'Option 2',
-		id: 1,
-		icon: null,
-		isStripped: false,
-		onSelect: this.onSelect,
-	}],
+  options: [{
+    title: 'Option 1',
+    id: 0,
+    icon: <Image
+      style={{width: 18, height: 18}}
+      source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}
+    />,
+    isStripped: false,
+    onSelect: this.onSelect,
+  }, {
+    title: 'Option 2',
+    id: 1,
+    icon: null,
+    isStripped: false,
+    onSelect: this.onSelect,
+  }],
 
-	
-
-	render() {
-		<Popover
-			options={this.options}
-			onHidden={this.onHidden}
-		>
-			<YourComponentToWrapping />
-		</Popover>
-	}
+  render() {
+    <Popover
+      options={this.options}
+      onHidden={this.onHidden}
+    >
+      <YourComponentToWrapping />
+    </Popover>
+  }
 }
 
 export default App;
